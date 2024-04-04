@@ -2,37 +2,74 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.player-wrapper {
+  position: relative;
+  padding-top: 46.25%;
+  /* Player ratio: 100 / (1280 / 720) */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.player-wrapper {
+  flex: 1;
+  margin-right: 20px;
+  /* Espaçamento entre o player e a lista de reprodução */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playlist {
+  flex: 0 0 200px;
+  /* Largura fixa da lista de reprodução */
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.playlist h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.playlist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playlist li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.playlist li:hover {
+  background-color: #e0e0e0;
+}
+
+.selected {
+  background-color: #c0c0c0;
+}
+
+.video-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.video-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
