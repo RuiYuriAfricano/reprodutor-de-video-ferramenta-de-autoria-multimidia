@@ -115,6 +115,12 @@ function App() {
     setCurrentVideo(videoList[previousIndex]);
   };
 
+  // Função chamada ao finalizar o vídeo
+  const handleVideoEnd = () => {
+    handleNextVideo();
+    setPlaying(true); // Inicia automaticamente o próximo vídeo
+  };
+
   return (
     <div className='app-container'>
       {/* Componente ReactPlayer para reproduzir o vídeo */}
@@ -130,6 +136,7 @@ function App() {
             volume={volume}
             muted={muted}
             onProgress={handleProgress}
+            onEnded={handleVideoEnd}
             controls={false} // Desativando os controles padrão do ReactPlayer
           />
         ) : (
@@ -161,7 +168,7 @@ function App() {
       <div className='playlist'>
         <h2>Playlist</h2>
         <ul>
-          {videoList.map((video) => (
+          {videoList.map((video, index) => (
             <li key={video.id} onClick={() => setCurrentVideo(video)} className={currentVideo.id === video.id ? 'selected' : ''}>
               {video.title}
             </li>
