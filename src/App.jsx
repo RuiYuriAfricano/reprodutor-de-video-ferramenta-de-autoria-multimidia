@@ -123,57 +123,67 @@ function App() {
 
   return (
     <div className='app-container'>
-      {/* Componente ReactPlayer para reproduzir o vídeo */}
-      <div className='player-wrapper'>
-        {playing ? (
-          <ReactPlayer
-            ref={playerRef}
-            className='react-player'
-            url={currentVideo.url}
-            width='90%'
-            height='90%'
-            playing={playing}
-            volume={volume}
-            muted={muted}
-            onProgress={handleProgress}
-            onEnded={handleVideoEnd}
-            controls={false} // Desativando os controles padrão do ReactPlayer
-          />
-        ) : (
-          <img className='react-player' src={currentVideo.capa} alt="Capa do vídeo" width="90%" height="90%" />
-        )}
-        {/* Título do vídeo */}
-        <h2 className='video-title'>{currentVideo.title}</h2>
-        {/* Controles personalizados do vídeo */}
-        <div className="controls">
-          {/* Botão para retroceder para o vídeo anterior */}
-          <button onClick={handlePreviousVideo}>Previous</button>
-          {/* Botão para reproduzir ou pausar o vídeo */}
-          <button onClick={handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
-          {/* Botão para avançar para o próximo vídeo */}
-          <button onClick={handleNextVideo}>Next</button>
-          {/* Barra de progresso do vídeo */}
-          <input
-            type='range' min={0} max={1} step='any'
-            value={played} onChange={handleSeekChange}
-            onMouseDown={handleSeekMouseDown} onMouseUp={handleSeekMouseUp}
-          />
-          {/* Botão para mutar ou desmutar o vídeo */}
-          <button onClick={handleMute}>{muted ? 'Unmute' : 'Mute'}</button>
-          {/* Controle de volume do vídeo */}
-          <input type='range' min={0} max={1} step='any' value={volume} onChange={handleVolumeChange} />
+      <div className='app-inside'>
+        {/* Componente ReactPlayer para reproduzir o vídeo */}
+        <div className='player-wrapper'>
+          <div className='box-palyer'>
+            {playing ? (
+              <ReactPlayer
+                ref={playerRef}
+                className='react-player'
+                url={currentVideo.url}
+                width='100%'
+                height=''
+                playing={playing}
+                volume={volume}
+                muted={muted}
+                onProgress={handleProgress}
+                onEnded={handleVideoEnd}
+                controls={false} // Desativando os controles padrão do ReactPlayer
+              />
+            ) : (
+              <img className='react-player img' src={currentVideo.capa} alt="Capa do vídeo" />
+            )}
+          </div>
+          {/* Controles personalizados do vídeo */}
+          <div className="controls">
+            {/* Botão para retroceder para o vídeo anterior */}
+            <button onClick={handlePreviousVideo}>Previous</button>
+            {/* Botão para reproduzir ou pausar o vídeo */}
+            <button onClick={handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
+            {/* Botão para avançar para o próximo vídeo */}
+            <button onClick={handleNextVideo}>Next</button>
+            {/* Barra de progresso do vídeo */}
+            <label className='label-son'>
+            >>
+              <input
+                type='range' min={0} max={1} step='any'
+                value={played} onChange={handleSeekChange}
+                onMouseDown={handleSeekMouseDown} onMouseUp={handleSeekMouseUp}
+              />
+            </label>
+            {/* Botão para mutar ou desmutar o vídeo */}
+            <button onClick={handleMute}>{muted ? 'Unmute' : 'Mute'}</button>
+            {/* Controle de volume do vídeo */}
+            <label className='label-son'>
+              Son
+              <input type='range' min={0} max={1} step='any' value={volume} onChange={handleVolumeChange} />
+            </label>
+          </div>
+          {/* Título do vídeo */}
+          <h2 className='video-title'>{currentVideo.title}</h2>
         </div>
-      </div>
-      {/* Lista de reprodução */}
-      <div className='playlist'>
-        <h2>Playlist</h2>
-        <ul>
-          {videoList.map((video, index) => (
-            <li key={video.id} onClick={() => setCurrentVideo(video)} className={currentVideo.id === video.id ? 'selected' : ''}>
-              {video.title}
-            </li>
-          ))}
-        </ul>
+        {/* Lista de reprodução */}
+        <div className='playlist'>
+          <h2>Playlist</h2>
+          <ul>
+            {videoList.map((video, index) => (
+              <li key={video.id} onClick={() => setCurrentVideo(video)} className={currentVideo.id === video.id ? 'selected' : ''}>
+                {video.title}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
