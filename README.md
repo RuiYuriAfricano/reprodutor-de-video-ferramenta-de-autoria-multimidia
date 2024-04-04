@@ -1,7 +1,7 @@
 # Reprodutor de Video - Ferramenta de autoria Multimídia
 
 Olá eu criei o meu reprodutor de video, um projecto da cadeira de multimidia no ISPTEC.
-Não utilizei controladores padrãos, criei os meus controladores (next, preview, play, pause, seek e mute).
+Não utilizei controladores padrãos, criei os meus controladores (next, preview, play, pause, seek e mute, volume).
 Este é um projecto react js.
 
 Segue-se abaixo, os resultados:
