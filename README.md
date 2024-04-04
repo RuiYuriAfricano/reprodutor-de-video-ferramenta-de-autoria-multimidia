@@ -6,7 +6,7 @@ Video em reprodução
 
 video pausado
 
-![Captura de Ecrã (2)](https://github.com/RuiYuriAfricano/lab-multimidia/assets/95936638/c098c595-d84a-4b73-910e-fbf8d29b2e16)
+![Captura de Ecrã (5)](https://github.com/RuiYuriAfricano/lab-multimidia/assets/95936638/2a076670-4219-4fe8-b31a-17d7a308e2ed)
 
 Video em reprodução
 
