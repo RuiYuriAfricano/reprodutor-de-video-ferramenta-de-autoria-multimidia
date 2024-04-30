@@ -9,6 +9,7 @@ import video3 from './medias/Rosny Kayiba - Mon meilleur ami ( Clip officiel).mp
 import video4 from './medias/Grace Zola - Oza Monene feat. Ruth Kuniasa (Official Music Video).mp4';
 import video5 from './medias/Rhema Loseke - Yaya ( Clip Officiel).mp4';
 import video6 from './medias/Eva Rapdiva x Deezy - Incondicional _ Prod Teo No Beat.mp4';
+import video7 from './medias/Narração do vídeo.mp4';
 
 // Importando as imagens das capas
 import capa1 from './medias/Capa1.jpg';
@@ -17,6 +18,7 @@ import capa3 from './medias/Capa3.jpg';
 import capa4 from './medias/Capa4.jpg';
 import capa5 from './medias/Capa5.jpg';
 import capa6 from './medias/Capa6.jpg';
+import capa7 from './medias/Capa7.jpg';
 
 // Lista de vídeos
 const videoList = [
@@ -25,7 +27,8 @@ const videoList = [
   { id: 3, title: 'Rosny Kayiba - Mon meilleur ami', url: video3, capa: capa3 },
   { id: 4, title: 'Grace Zola - Oza Monene feat. Ruth Kuniasa', url: video4, capa: capa4 },
   { id: 5, title: 'Rhema Loseke - Yaya', url: video5, capa: capa5 },
-  { id: 6, title: 'Eva Rapdiva x Deezy - Incondicional', url: video6, capa: capa6 }
+  { id: 6, title: 'Eva Rapdiva x Deezy - Incondicional', url: video6, capa: capa6 },
+  { id: 7, title: 'Narração da História', url: video7, capa: capa7 }
 ];
 
 function App() {
@@ -169,7 +172,7 @@ function App() {
             <button onClick={handleMute}>{muted ? 'Unmute' : 'Mute'}</button>
             {/* Controle de volume do vídeo */}
             <label className='label-son'>
-              Son
+              Volume
               <input type='range' min={0} max={1} step='any' value={volume} onChange={handleVolumeChange} />
             </label>
           </div>
